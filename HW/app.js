@@ -1,6 +1,6 @@
 //make sample function
 function makeSampleData(sample) {
-    d3.json("/data/samples.json").then((data) => {
+    d3.json("/data/samples.json").then(function(data) {
 
 
 
@@ -13,8 +13,10 @@ function makeSampleData(sample) {
 
 // create charts function
 function makeCharts(sample) {
-    d3.json("/data/samples.json").then((data) => {
+    d3.json("/data/samples.json").then(function(data) {
 
+    // data
+    var 
     // create horizontal bar chart
 
     // create bubble chart 
