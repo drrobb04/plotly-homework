@@ -9,7 +9,7 @@ function makeSampleData(sample) {
         var dropDown = d3.select("#sample-metadata");
         dropDown.html("");
         Object.entries(sampleSet).forEach(([key, value]) => {
-            dropDown.append("h6").text(`${key.toUpperCase()}: ${value}`);
+            dropDown.append("h4").text(`${key}: ${value}`);
           });
     });
 }
@@ -79,8 +79,8 @@ function init() {
         var chartTitle = sampleTitle[0];
 
         makeCharts(chartTitle);
-    
-    
+        makeSampleData(chartTitle);
+
     });
 }
 
