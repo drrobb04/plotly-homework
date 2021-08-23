@@ -14,10 +14,6 @@ function makeSampleData(sample) {
     });
 }
 
-
-
-
-
 // create charts function
 function makeCharts(sample) {
     d3.json("samples.json").then((data) => {
@@ -52,27 +48,27 @@ function makeCharts(sample) {
         // create bubble chart 
         var bubbleData = [
             {
-                x: outIds,
+                x: otuIds,
                 y: sampleValues,
+                mode: "markers",
+                marker: {
+                    size: sampleValues,
+                    color: otuIds,
+                }
             }
         ];
 
         var bubbleLayout = [
             {
-                title:"otu prevelance",
+                title: "otu prevelance",
+                xaxis: "OTU ID"
             }
         ];
 
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
-    }) 
+    }); 
 }
-
-
-
-
-
-
 
 // init function - event listener
 function init() {
