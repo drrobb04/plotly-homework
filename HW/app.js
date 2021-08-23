@@ -31,8 +31,6 @@ function makeCharts(sample) {
         var otuIds = graphSet.otu_ids;
         var otuLabels = graphSet.otu_labels;
 
-        console.log(graphData);
-
         // create horizontal bar chart
         var barData = [
             {
@@ -50,6 +48,21 @@ function makeCharts(sample) {
         Plotly.newPlot("bar", barData, barLayout);
 
         // create bubble chart 
+        var bubbleData = [
+            {
+                x: outIds,
+                y: sampleValues,
+            }
+        ];
+
+        var bubbleLayout = [
+            {
+                title:"otu prevelance"
+
+            }
+        ];
+
+        Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
     }) 
 }
