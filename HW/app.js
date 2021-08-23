@@ -31,11 +31,23 @@ function makeCharts(sample) {
         var otuIds = graphSet.otu_ids;
         var otuLabels = graphSet.otu_labels;
 
-    // data
-    var 
-    // create horizontal bar chart
+        // create horizontal bar chart
+        var barData = [
+            {
+                x: sampleValues,
+                y: otuIds,
+                type: "bar",
+                orientation: "h",
+            }
+        ];
 
-    // create bubble chart 
+        var barLayout = {
+            title: "10 Bacteria",
+          };
+      
+        Plotly.newPlot("bar", barData, barLayout);
+
+        // create bubble chart 
 
     }) 
 }
