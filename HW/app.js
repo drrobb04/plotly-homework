@@ -1,6 +1,6 @@
 //make sample function
 function makeSampleData(sample) {
-    d3.json("samples.json").then(function(data) {
+    d3.json("samples.json").then((data) => {
         // data set up
         var sampleData = data.metadata;
         var sampleArray = sampleData.filter(sampleObj => sampleObj.id == sample);
@@ -20,7 +20,7 @@ function makeSampleData(sample) {
 
 // create charts function
 function makeCharts(sample) {
-    d3.json("samples.json").then(function(data) {
+    d3.json("samples.json").then((data) => {
         // data set up
         var graphData = data.samples;
         var graphArray = graphData.filter(sampleObj => sampleObj.id == sample);
@@ -30,6 +30,8 @@ function makeCharts(sample) {
         var sampleValues = graphSet.sample_values;
         var otuIds = graphSet.otu_ids;
         var otuLabels = graphSet.otu_labels;
+
+        console.log(graphData);
 
         // create horizontal bar chart
         var barData = [
