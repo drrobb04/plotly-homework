@@ -1,6 +1,6 @@
 //make sample function
 function makeSampleData(sample) {
-    d3.json("/data/samples.json").then(function(data) {
+    d3.json("samples.json").then(function(data) {
         // data set up
         var sampleData = data.metadata;
         var sampleArray = sampleData.filter(sampleObj => sampleObj.id == sample);
@@ -20,7 +20,7 @@ function makeSampleData(sample) {
 
 // create charts function
 function makeCharts(sample) {
-    d3.json("/data/samples.json").then(function(data) {
+    d3.json("samples.json").then(function(data) {
         // data set up
         var graphData = data.samples;
         var graphArray = graphData.filter(sampleObj => sampleObj.id == sample);
