@@ -1,6 +1,9 @@
 //make sample function
 function makeSampleData(sample) {
     d3.json("/data/samples.json").then(function(data) {
+        var sampleData = data.metadata;
+        var sampleArray = sampleData.filter(sampleObj => sampleObj.id == sample);
+        var sample = sampleArray[0];
 
 
 
