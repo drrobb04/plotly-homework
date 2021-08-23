@@ -34,15 +34,17 @@ function makeCharts(sample) {
         // create horizontal bar chart
         var barData = [
             {
-                x: sampleValues,
-                y: otuIds,
+                x: sampleValues.slice(0,10),
+                y: otuIds.slice(0,10).map(otuID => `OTU ${otuID}`),
                 type: "bar",
                 orientation: "h",
             }
         ];
 
         var barLayout = {
-            title: "10 Bacteria",
+            title: "Top 10 Bacteria",
+            xaxis: { title: "Sample Values" },
+            yaxis: { title: "OTU ID" },
           };
       
         Plotly.newPlot("bar", barData, barLayout);
@@ -57,8 +59,7 @@ function makeCharts(sample) {
 
         var bubbleLayout = [
             {
-                title:"otu prevelance"
-
+                title:"otu prevelance",
             }
         ];
 
