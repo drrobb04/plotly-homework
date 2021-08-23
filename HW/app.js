@@ -62,10 +62,19 @@ function makeCharts(sample) {
 
 // init function - event listener
 function init() {
+    var selector = d3.select("#selDataset");
 
+    d3.json("samples.json").then((data) => {
+        var sampleTitle = data.names;
+        var chartTitle = sampleTitle[0];
 
+        makeCharts(chartTitle);
+    
+    
+    });
 }
 
+init();
 
 
 
